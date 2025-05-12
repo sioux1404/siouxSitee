@@ -1,0 +1,13 @@
+.header {
+  background-color: rgba(0, 0, 0, 0.7); /* optional background */
+}
+
+.nav-bar {
+  display: flex;
+}
+
+.nav-item {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
