@@ -12,29 +12,44 @@ html, body, #root {
 }
 
 .app-container {
+  position: relative; /* Stacking context */
   width: 100%;
   height: 100%;
-  background-color: white; /* fallback */
-  overflow: hidden;
+  background-color: white;
+  overflow: auto;
+  z-index: 1; /* Contextual but not affecting children unless nested */
 }
 
-.app-container img {
+.TotallBackGround {
+  z-index: -2;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  filter: blur(4px); /* ~60% blur effect */
-  object-fit: cover; /* fills container */
-  object-position: center; /* centers the image */
-  display: block;
+  filter: blur(4px);
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
 }
 
 .header {
-  position: sticky;    /* Keeps it stuck at the top */
-  top: 0;              /* Required for sticky to work */
-  z-index: 3;
+  position: sticky;
+  top: 0;
+  z-index: 3; /* On top of HotBar */
   padding: 1rem 2rem;
   display: flex;
   justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Optional for visibility */
+}
+
+.HotBar {
+  position: absolute;
+  z-index: 2; /* On top of background image (z-index: 0), under .header (z-index: 3) */
+  display: flex;
+  top: 60px; /* Example offset, adjust as needed */
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional for better visibility */
 }
