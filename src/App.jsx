@@ -5,9 +5,9 @@ import HotBar from './HotBar';
 
 function App() {
   return (
-    <div className="app-container">      
+    <div className="app-container">    
+        <Header />  
       <div className="content">
-        <Header />
         <HotBar />
       </div>
       <img src={Background} alt="Background" className='TotallBackGround' />
