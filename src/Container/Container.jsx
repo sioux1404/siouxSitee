@@ -62,10 +62,10 @@ class ContainerComponent extends Component {
         return(
           <section className="menu-container">
             <div className="bars">
-
+              HELLO
             </div>
             <section className="top">
-
+      
             </section>
             <section className="bottom">
                 {
